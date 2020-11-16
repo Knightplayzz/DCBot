@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     try{
       
 var botEmbed = new discord.MessageEmbed()
-    .setTitle(`_***V2C Commands***_`)
+    .setTitle(`_***GameNight Commands***_`)
     .setDescription(`Ping is ${Date.now() - message.createdTimestamp}ms.`)
     .setColor("#001366")
     .addField('**Server Commands**', [
@@ -32,7 +32,7 @@ var botEmbed = new discord.MessageEmbed()
 
     ])
     .addField(`**Level commands**`, [
-        `**!levels** | Show the  V2C leaderboard.`,
+        `**!levels** | Show the GameNight's leaderboard.`,
         `**!rank** | Shows your level.`,
 
         `\u200b`
