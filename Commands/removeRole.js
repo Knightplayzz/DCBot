@@ -26,13 +26,6 @@ module.exports.run = async (bot, message, args) => {
 
     var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
 
-    var check = new discord.MessageEmbed()
-      .setTitle("**Warn**")
-      .setColor("RED")
-      .setFooter(`© created by philippe#0354`)
-      .setTimestamp()
-      .setDescription(`By ${targetUser} a role has been removed. \n **role:** ${role}. \n **Warned by:** ${message.author}.`);
-
     if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(botEmbedError1);
     
         var roleRemove = new discord.MessageEmbed()
@@ -48,12 +41,19 @@ module.exports.run = async (bot, message, args) => {
             return;
         }
         
+        var log = new discord.MessageEmbed()
+        .setTitle("**Warn**")
+        .setColor("RED")
+        .setFooter(`© created by philippe#0354`)
+        .setTimestamp()
+        .setDescription(`By ${targetUser} a role has been removed. \n **role:** ${role}. \n **Warned by:** ${message.author}.`);
+  
 
         targetUser.roles.remove(role);
 
         console.log('Made it this far')
 
-        logChannel.send(check);
+        logChannel.send(log);
         return message.channel.send(roleRemove);
     
 
