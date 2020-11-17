@@ -22,7 +22,7 @@ var botEmbedError = new discord.MessageEmbed()
 
 module.exports.run = async (client, message, args) => {
 
-    var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
+    var logChannel = message.guild.channels.cache.find(channel => channel.name === "general")
 
     var warn = new discord.MessageEmbed()
     .setTitle("**Mute**")
