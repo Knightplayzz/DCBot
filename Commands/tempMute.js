@@ -42,6 +42,7 @@ module.exports.run = async (client, message, args) => {
     var muteTime = args[1];
 
     var botEmbedMute = new discord.MessageEmbed()
+.setTitle("Mute")
 .setDescription("**You are muted!**")
 .setColor("RED")
 .setFooter(`© created by philippe#0354`)
@@ -57,6 +58,7 @@ var log = new discord.MessageEmbed()
 logChannel.send(log)
 
 var botEmbedUnmute = new discord.MessageEmbed()
+.setTitle("Unmute")
 .setDescription("**You are unmuted!**")
 .setColor("GREEN")
 .setFooter(`© created by philippe#0354`)

@@ -19,6 +19,11 @@ var botEmbedError2 = new discord.MessageEmbed()
 
 module.exports.run = async (bot, message, args) => {
 
+    const targetUser = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
+        if (!targetUser) {
+            return message.channel.send(botEmbedError2);
+        }
+
     var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
 
     var check = new discord.MessageEmbed()
@@ -30,11 +35,6 @@ module.exports.run = async (bot, message, args) => {
 
     if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(botEmbedError1);
     
-    
-    const targetUser = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
-        if (!targetUser) {
-            return message.channel.send(botEmbedError2);
-        }
         var roleRemove = new discord.MessageEmbed()
         .setColor("GREEN")
         .setTitle("**The rol has been removed!**")
@@ -47,13 +47,14 @@ module.exports.run = async (bot, message, args) => {
             message.reply(`There is no role with the name "${role}"`)
             return;
         }
+        
 
         targetUser.roles.remove(role);
 
         console.log('Made it this far')
 
-        return message.channel.send(roleRemove);
         logChannel.send(check);
+        return message.channel.send(roleRemove);
     
 
     
