@@ -1,7 +1,5 @@
 const discord = require("discord.js");
 
-var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
-
 var botEmbedError1 = new discord.MessageEmbed()
 .setColor("RED")
         .setTitle("**An error has occurred!**")
@@ -19,6 +17,8 @@ var botEmbedError2 = new discord.MessageEmbed()
 
 
 module.exports.run = async (bot, message, args) => {
+
+    var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
 
     if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(botEmbedError1);
     
