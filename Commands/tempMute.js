@@ -24,13 +24,6 @@ module.exports.run = async (client, message, args) => {
 
     var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
 
-    var warn = new discord.MessageEmbed()
-    .setTitle("**Mute**")
-    .setColor("RED")
-    .setFooter(`© created by philippe#0354`)
-    .setTimestamp()
-    .setDescription(`${mutePerson} is been muted. \n **Time** ${muteTime} \n **Muded by:** ${message.author}.`);
-
    if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(botEmbedError);
    
    if (!args[0]) return message.channel.send(botEmbedError);
@@ -54,7 +47,14 @@ module.exports.run = async (client, message, args) => {
 .setFooter(`© created by philippe#0354`)
 .setDescription(`**Name:** ${mutePerson} \n **Time:** ${muteTime}`)
 
-logChannel.send(warn)
+var log = new discord.MessageEmbed()
+.setTitle("**Mute**")
+.setColor("RED")
+.setFooter(`© created by philippe#0354`)
+.setTimestamp()
+.setDescription(`${mutePerson} is been muted. \n **Time** ${muteTime} \n **Muded by:** ${message.author}.`);
+
+logChannel.send(log)
 
 var botEmbedUnmute = new discord.MessageEmbed()
 .setDescription("**You are unmuted!**")
@@ -76,7 +76,7 @@ var botEmbedUnmute = new discord.MessageEmbed()
 
         message.channel.send(botEmbedUnmute); 
         
-    }, ms(muteTime));
+    }, ms(muteTime*1000));
 
 }
 
