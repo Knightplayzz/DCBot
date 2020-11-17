@@ -59,14 +59,8 @@ logChannel.send(warn)
 var botEmbedUnmute = new discord.MessageEmbed()
 .setDescription("**You are unmuted!**")
 .setColor("GREEN")
-.addField(`**Player**`, [
-`**Name:** ${mutePerson}`,
-`**Status:** Unmute`,
-
-`\u200b`
-
-])
 .setFooter(`© created by philippe#0354`)
+.setDescription(`**Name:** ${mutePerson} \n **Status:** Unmute`)
 
 
 
