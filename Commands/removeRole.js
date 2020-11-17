@@ -42,7 +42,7 @@ module.exports.run = async (bot, message, args) => {
         }
         
         var log = new discord.MessageEmbed()
-        .setTitle("**Warn**")
+        .setTitle("**Remove roll**")
         .setColor("RED")
         .setFooter(`© created by philippe#0354`)
         .setTimestamp()

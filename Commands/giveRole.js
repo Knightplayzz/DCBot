@@ -1,5 +1,7 @@
 const discord = require("discord.js");
 
+var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
+
 var botEmbedError1 = new discord.MessageEmbed()
 .setColor("RED")
         .setTitle("**An error has occurred!**")
@@ -42,6 +44,14 @@ module.exports.run = async (bot, message, args) => {
 
         console.log('Made it this far')
 
+        var log = new discord.MessageEmbed()
+        .setTitle("**Role add**")
+        .setColor("RED")
+        .setFooter(`© created by philippe#0354`)
+        .setTimestamp()
+        .setDescription(`By ${targetUser} a role has been added. \n **role:** ${role}. \n **Warned by:** ${message.author}.`);
+
+        logChannel.send(log);
         return message.channel.send(roleGiven);
     
 
