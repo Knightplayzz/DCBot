@@ -1,7 +1,5 @@
 const discord = require("discord.js");
 
-var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
-
 var botEmbedError = new discord.MessageEmbed()
 .setDescription("**Command Error**")
 .setColor("RED")
@@ -56,14 +54,6 @@ module.exports.run = async (client, message, args) => {
   var channel = message.member.guild.channels.cache.find(channels => channels.name === options.kanaal);
   if(!channel) return message.reply("geen goed kanaal");
 
-  var log = new discord.MessageEmbed()
-  .setTitle("**Announce**")
-  .setColor("RED")
-  .setFooter(`© created by philippe#0354`)
-  .setTimestamp()
-  .setDescription(`A announcement has been made by: ${message.author}`);
-
-  logChannel.send(log);
   channel.send(announceEmbed);
 
 }
