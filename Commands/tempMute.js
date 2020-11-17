@@ -51,14 +51,8 @@ module.exports.run = async (client, message, args) => {
     var botEmbedMute = new discord.MessageEmbed()
 .setDescription("**You are muted!**")
 .setColor("RED")
-.addField(`**Player**`, [
-`**Name:** ${mutePerson}`,
-`**Time:** ${muteTime}`,
-
-`\u200b`
-
-])
 .setFooter(`© created by philippe#0354`)
+.setDescription(`**Name:** ${mutePerson} \n **Time:** ${muteTime}`)
 
 logChannel.send(warn)
 
