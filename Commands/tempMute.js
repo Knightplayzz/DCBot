@@ -38,14 +38,12 @@ module.exports.run = async (client, message, args) => {
    if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send(botEmbedError);
 
    var mutePerson = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-   
-   var botEmbed = new discord.MessageEmbed()
 
    if (!mutePerson) return message.channel.send(botEmbedError);
 
    if (mutePerson.hasPermission("MANAGE_MESSAGES")) return message.channel.send(botEmbedError);
 
-    var muteRole = message.guild.roles.cache.get('768034503113310219');
+    var muteRole = message.guild.roles.cache.get('778341182987436042');
     if(!muteRole) return message.channel.send(botEmbedError);
 
     var muteTime = args[1];
