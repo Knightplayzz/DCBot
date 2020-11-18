@@ -6,7 +6,7 @@ const discord = require("discord.js");
       .setTitle("**Error**")
       .setColor("RED")
       .setFooter(`© created by philippe#0354`)
-      .setDescription(`No permission for this command.`);
+      .setDescription(`${message.author} you don't have permission for this command.`);
 
     var loggingChannel = message.guild.channels.cache.find(channel => channel.name === "〔📌〕mededelingen")
     if (!loggingChannel) return message.channel.send("Kan het kanaal niet vinden");
