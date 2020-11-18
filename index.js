@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 const botConfig = require("./botConfig.json");
-const welcome = require('./welcome.js')
+const welcome = require("./welcome.js")
 const fs = require ("fs");
 
 welcome(client)
