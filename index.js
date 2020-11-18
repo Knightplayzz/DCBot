@@ -40,10 +40,7 @@ bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.typ === "dm") return;
 
-    var msg = message.content.toLocaleLowerCase();
-
-
-    
+  
     var messageArray = message.content.split(" ");
 
     var swearWords = JSON.parse(fs.readFileSync("./data/swearWords.json"));
@@ -122,7 +119,7 @@ bot.on("message", async message => {
    
     if (commands) commands.run(bot, message, arguments, options);
 
-    bot.on('guildMemberAdd' , member => {
+    bot.on('guildMemberAdd', member => {
         member.send(`Welcome ${member} to the server!`);
     });
 
