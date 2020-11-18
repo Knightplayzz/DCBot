@@ -120,9 +120,7 @@ bot.on("message", async message => {
     if (commands) commands.run(bot, message, arguments, options);
 
     bot.on('guildMemberAdd', member => {
-        member.send(`Welcome ${member} to the server!`);
+        member.guild.channels.get('778345716304052244').send("Welcome"); 
     });
-
-
 
 });
