@@ -44,9 +44,9 @@ module.exports.run = async (client, message, args) => {
   }
 
   var announceEmbed = new discord.MessageEmbed()
-  .setTitle("Announcement")
+  .setTitle(`${options.titel}`)
   .setColor(options.collor)
-  .setDescription(` \n ${options.titel} \n ${options.bericht} \n\n Bericht van ${message.author} \n`)
+  .setDescription(`${options.bericht} \n\n Bericht van ${message.author} \n`)
   .setFooter(`© created by philippe#0354`)
   .setTimestamp();
   
