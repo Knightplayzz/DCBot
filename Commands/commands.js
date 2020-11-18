@@ -39,12 +39,6 @@ var botEmbed = new discord.MessageEmbed()
     ])
     .addField(`**Music Commands**`, [
         `**!p** | Play a song or link.`,
-        `**!s** | Skip a song.`,
-        `**!fs** | ForceSkip a song.`,
-        `**!loop** | Loop a song.`,
-        `**!lyrics** | Shows the lyrics of the song.`,
-        `**!pause** | Pasue the song.`,
-        `**!start/resume** | Start the song.`,
         `**!disconnect** | Disconnect the bot.`,
 
         `\u200b`

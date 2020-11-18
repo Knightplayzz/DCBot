@@ -5,6 +5,8 @@ const discord = require("discord.js");
     var loggingChannel = message.guild.channels.cache.find(channel => channel.name === "〔📌〕mededelingen")
     if (!loggingChannel) return message.channel.send("Kan het kanaal niet vinden");
 
+    if (!message.member.hasPermission("BAN_MEMBERS")) return message.cannel.send("No perms");
+
      var code = args.join(" ");
 
     if(args[0] == null){
