@@ -11,22 +11,22 @@ var botEmbed = new discord.MessageEmbed()
     .setDescription(`Ping is ${Date.now() - message.createdTimestamp}ms.`)
     .setColor("#001366")
     .addField('**Server Commands**', [
-        `**-commands** | Shows all commands.`,
-        `**-serverinfo** | Give all information about the server.`,
-        `**-hello** | Says hello back.`,
-        `**-ping** | Shows the ping of the bot.`,
-        `**-amongus** | Shows the code of the match`,
+        `**!commands** | Shows all commands.`,
+        `**!serverinfo** | Give all information about the server.`,
+        `**!hello** | Says hello back.`,
+        `**!ping** | Shows the ping of the bot.`,
+        `**!amongus** | Shows the code of the match`,
 
         '\u200b'
     ])
     .addField(`**Moderator Commands**`, [
-        `**-kick** | Kick a user.`,
-        `**-ban** | Get a user banned.`,
-        `**-tempmute** | Mutes a player for given minutes.`,
-        `**-clear** | Deletes the given amount of messages at a time.`,
-        `**-announce** | Make a announcement`,
-        `**-addrole** | Adds a role to a player.`,
-        `**-removerole** | Removes the role of a player.`,
+        `**!kick** | Kick a user.`,
+        `**!ban** | Get a user banned.`,
+        `**!tempmute** | Mutes a player for given minutes.`,
+        `**!clear** | Deletes the given amount of messages at a time.`,
+        `**!announce** | Make a announcement`,
+        `**!addrole** | Adds a role to a player.`,
+        `**!removerole** | Removes the role of a player.`,
 
         `\u200b`
 
