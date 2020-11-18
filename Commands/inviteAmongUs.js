@@ -2,10 +2,16 @@ const discord = require("discord.js");
   
   module.exports.run = async (client, message, args) => {
 
+    var error = new discord.MessageEmbed()
+      .setTitle("**Error**")
+      .setColor("RED")
+      .setFooter(`© created by philippe#0354`)
+      .setDescription(`No permission for this command.`);
+
     var loggingChannel = message.guild.channels.cache.find(channel => channel.name === "〔📌〕mededelingen")
     if (!loggingChannel) return message.channel.send("Kan het kanaal niet vinden");
 
-    if (!message.member.hasPermission("BAN_MEMBERS")) return message.cannel.send("No perms");
+    if (!message.member.hasPermission("BAN_MEMBERS")) return message.cannel.send(error);
 
      var code = args.join(" ");
 
