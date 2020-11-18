@@ -6,7 +6,14 @@ const bot = new discord.Client();
 bot.login(process.env.token);
 
 bot.on('guildMemberAdd', member => {
-    member.guild.channel.get('778278515686637580').send("Welcome"); 
+    var welcomechannel = message.guild.channels.cache.find(channel => channel.name === "log")
+    var welcome = new discord.MessageEmbed()
+    .setTitle("**Welcome**")
+    .setColor("RED")
+    .setFooter(`© created by philippe#0354`)
+    .setDescription(`Welcome to the server.`);
+
+    welcomechannel.send(welcome)
 });
 
 const activeSongs = new Map();
