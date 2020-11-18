@@ -1,20 +1,12 @@
 const discord = require("discord.js");
 const botConfig = require("./botConfig.json");
+const welcome = require('./welcome')
 const fs = require ("fs");
 
 const bot = new discord.Client();
 bot.login(process.env.token);
 
-bot.on('guildMemberAdd', member => {
-    var welcomechannel = message.guild.channels.cache.find(channel => channel.name === "log")
-    var welcome = new discord.MessageEmbed()
-    .setTitle("**Welcome**")
-    .setColor("RED")
-    .setFooter(`© created by philippe#0354`)
-    .setDescription(`Welcome to the server.`);
-
-    welcomechannel.send(welcome)
-});
+welcome(client)
 
 const activeSongs = new Map();
 
