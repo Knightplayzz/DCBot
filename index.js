@@ -82,19 +82,28 @@ bot.on("message", async message => {
     }
 
     var warning = new discord.MessageEmbed()
-    .setDescription("**YOU HAVE A WARNING**")
+    .setTitle("**YOU HAVE A WARNING**")
     .setColor("RED")
     .setFooter(`© created by philippe#0354`)
     .setTimestamp()
-    .addField('**Player**', [
-        `**WARNING** | You have a warning for swearing!`
-    ])
+    .setDescription(`User: ${message.author} \n Warning: swearing`)
+
+    var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
+
+    var log = new discord.MessageEmbed()
+    .setTitle("**WARN**")
+    .setColor("RED")
+    .setFooter(`© created by philippe#0354`)
+    .setTimestamp()
+    .setDescription(`**User:** ${message.author}. \n **Warning:** swearing.`);
 
     if (amountSwearWords !=0){
 
         message.delete();
         message.channel.send(senteceUser);
+        logChannel.send(log)
         return message.channel.send(warning);
+
     }
 
 
