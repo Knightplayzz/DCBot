@@ -6,7 +6,7 @@ const bot = new discord.Client();
 bot.login(process.env.token);
 
 bot.on('guildMemberAdd', member => {
-    member.guild.channels.get('778278515686637580').send("Welcome"); 
+    member.guild.channel.get('778278515686637580').send("Welcome"); 
 });
 
 const activeSongs = new Map();
