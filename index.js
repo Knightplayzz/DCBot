@@ -119,7 +119,7 @@ bot.on("message", async message => {
    
     if (commands) commands.run(bot, message, arguments, options);
 
-    client.on('guildMemberAdd', member => {
+    bot.on('guildMemberAdd', member => {
         member.send(`Welcome ${member} to the server!`);
     });
 
