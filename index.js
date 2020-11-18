@@ -86,7 +86,7 @@ bot.on("message", async message => {
     .setColor("RED")
     .setFooter(`© created by philippe#0354`)
     .setTimestamp()
-    .setDescription(`User: ${message.author} \n Warning: swearing`)
+    .setDescription(`**User:** ${message.author} \n **Warning:** swearing`)
 
     var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
 
