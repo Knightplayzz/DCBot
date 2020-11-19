@@ -1,13 +1,13 @@
 const discord = require("discord.js");
 const botConfig = require("./botConfig.json");
 const fs = require ("fs");
+var prefix = botConfig.prefix;
 
 const bot = new discord.Client();
 bot.login(process.env.token);
 
 const activeSongs = new Map();
 
-var prefix = botConfig.prefix;
 bot.commands = new discord.Collection()
 
 
@@ -40,9 +40,19 @@ bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.typ === "dm") return;
 
-  
-    var messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
 
+    if(cmd === `${prefix}reactions`){
+        let reactRolesEmbed = new Discord.MessageEmbed()
+        .setTitle("Reaction roles")
+        .setDescription("React to gain the role.")
+        .setColor("GREEN")
+        .setFooter(`© created by philippe#0354`)
+        let msgEmbed = await message.channel.send(reactRolesEmbed).
+        msgEmbed.react('😋')
+    }
+
+    var messageArray = message.content.split(" ");
     var swearWords = JSON.parse(fs.readFileSync("./data/swearWords.json"));
 
     var senteceUser = "";
@@ -118,5 +128,4 @@ bot.on("message", async message => {
     }
    
     if (commands) commands.run(bot, message, arguments, options);
-
 });
