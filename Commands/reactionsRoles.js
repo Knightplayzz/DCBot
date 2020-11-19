@@ -1,17 +1,7 @@
-const discord = require("discord.js");
+const firstMessage = require('./first-message')
 
-module.exports.run = async (client, message, args) => {
+module.exports = bot => {
+    const channelId = '778277728104480821'
 
-    var helloEmbed = new discord.MessageEmbed()
-    .setTitle("**Greatings**")
-    .setColor("BLUE")
-    .setFooter(`© created by philippe#0354`)
-    .setDescription(`${message.author} You are greeted by Night-Bot!`);
-
-    message.channel.send(helloEmbed)
-
-}
-
-module.exports.help = {
-    name: "reactionsroles"
+    firstMessage(bot, channelId, 'hello wold', [])
 }

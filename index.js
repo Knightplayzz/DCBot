@@ -2,6 +2,7 @@ const discord = require("discord.js");
 const botConfig = require("./botConfig.json");
 const fs = require ("fs");
 var prefix = botConfig.prefix;
+const roleClaim = require('./reactionsRoles.js')
 
 const bot = new discord.Client();
 bot.login(process.env.token);
@@ -17,7 +18,7 @@ bot.user.setActivity("Your problems", {
     type:"LISTENING"
 } );
 
-
+    roleClaim(bot)
 });
 
 fs.readdir("./Commands/" , (err, files) => {
@@ -39,18 +40,6 @@ fs.readdir("./Commands/" , (err, files) => {
 bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.typ === "dm") return;
-
-    const cmd = messageArray[0];
-
-    if(cmd === `${prefix}reactions`){
-        let reactRolesEmbed = new Discord.MessageEmbed()
-        .setTitle("Reaction roles")
-        .setDescription("React to gain the role.")
-        .setColor("GREEN")
-        .setFooter(`© created by philippe#0354`)
-        const msgEmbed = await message.channel.send(reactRolesEmbed).
-        msgEmbed.react('😋')
-    }
 
     var messageArray = message.content.split(" ");
     var swearWords = JSON.parse(fs.readFileSync("./data/swearWords.json"));
