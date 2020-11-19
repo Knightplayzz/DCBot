@@ -137,6 +137,6 @@ bot.on("message", async message => {
         .setTimestamp()
         .setFooter(`© created by philippe#0354`);
     
-        channel.send(welcomeEmbed);
+        joinChannel.send(welcomeEmbed);
     })
 });
