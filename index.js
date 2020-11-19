@@ -118,7 +118,7 @@ bot.on("message", async message => {
 
     bot.on("guildMemberAdd", member => {
    
-        var joinChannel = member.guild.channels.cache.get('778345716304052244');
+        var joinChannel = member.guild.channels.cache.get('779087637339963405');
         if (!joinChannel) return;
     
         //channel.send("welkem bij server.")
