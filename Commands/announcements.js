@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
     .setTitle("Use")
     .setColor("RED")
     .setFooter(`© created by philippe#0354`)
-    .setDescription(`Make a announcement thru: \n -announcement titel ${seperator} bericht ${ seperator} kleur ${seperator} kanaal`);
+    .setDescription(`Make a announcement thru: \n -announcement titel ${seperator} message ${ seperator} coller ${seperator} channel`);
 
     return message.reply(embed);
   }
@@ -52,7 +52,7 @@ module.exports.run = async (client, message, args) => {
   
 
   var channel = message.member.guild.channels.cache.find(channels => channels.name === options.kanaal);
-  if(!channel) return message.reply("geen goed kanaal");
+  if(!channel) return message.reply("Not an existing channel.");
 
   channel.send(announceEmbed);
 

@@ -11,36 +11,36 @@ var botEmbed = new discord.MessageEmbed()
     .setDescription(`Ping is ${Date.now() - message.createdTimestamp}ms.`)
     .setColor("#001366")
     .addField('**Server Commands**', [
-        `**!commands** | Shows all commands.`,
-        `**!serverinfo** | Information of the server.`,
-        `**!hello** | Says hello back.`,
-        `**!ping** | Shows the ping of the bot.`,
-        `**!amongus** | Shows the code of the match.`,
-        `**!howcommand** | Shows how to do a command.`,
+        `**!commands** | !commands <check dm>.`,
+        `**!serverinfo** | !serverinfo.`,
+        `**!hello** | !hello.`,
+        `**!ping** | !ping.`,
+        `**!amongus** | !amongus <code>.`,
+        `**!howcommand** | !howcommand <check dm>.`,
 
         '\u200b'
     ])
     .addField(`**Moderator Commands**`, [
-        `**!kick** | Kick a user.`,
-        `**!ban** | Get a user banned.`,
-        `**!tempmute** | Mutes a player for given minutes.`,
-        `**!clear** | Deletes the given amount of messages at a time.`,
-        `**!announce** | Makes a announcement.`,
-        `**!addrole** | Adds a role to a player.`,
-        `**!removerole** | Removes the role of a player.`,
+        `**!kick** | !kick <@user> <reason>.`,
+        `**!ban** | !ban <@user> <reason>.`,
+        `**!tempmute** | !tempmute <@player> <seconds x 1000>`,
+        `**!clear** | !clear <amount> (**NOT 99+**).`,
+        `**!announce** |!announce <title> | <message> | <collor> | <channel>.`,
+        `**!addrole** | !addrole <@player> <role.id>.`,
+        `**!removerole** | !removerole <@player> <role.id>.`,
 
         `\u200b`
 
     ])
     .addField(`**Level commands**`, [
-        `**!levels** | Show the GameNight's leaderboard.`,
-        `**!rank** | Shows your level.`,
+        `**!levels** | !levels.`,
+        `**!rank** | !rank.`,
 
         `\u200b`
     ])
     .addField(`**Music Commands**`, [
-        `**!p** | Plays a youtube link.`,
-        `**!disconnect** | Disconnect the bot.`,
+        `**!p** | !p <youtube link>.`,
+        `**!disconnect** | !disconnect.`,
 
         `\u200b`
     ])
@@ -69,6 +69,5 @@ var botEmbed = new discord.MessageEmbed()
 
   
   module.exports.help = {
-    name: "commands"
+    name: "howcommand"
 }
-
