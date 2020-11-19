@@ -120,7 +120,7 @@ bot.on("message", async message => {
 
         var welcomeRole = member.guild.roles.cache.get('779088706623635466');
 
-        if (!role) return;
+        if (!welcomeRole) return;
 
         member.roles.add(welcomeRole);
         
