@@ -36,8 +36,8 @@ module.exports.run = async (bot, message, args) => {
 
         console.log('Made it this far')
 
-        var roleGiven = new discord.MessageEmbed()
-        .setColor("GREEN")
+        var roleRemove = new discord.MessageEmbed()
+        .setColor("RED")
         .setTitle(`**Role has removed!**`)
         .setDescription(`**To:** ${targetUser}. \n **Role:** ${role}. \n **By:** ${message.author}.`)
         .setFooter(`© created by philippe#0354`)
@@ -53,7 +53,7 @@ module.exports.run = async (bot, message, args) => {
         targetUser.roles.remove(role);
 
         logChannel.send(log);
-        return message.channel.send(roleGiven);
+        return message.channel.send(roleRemove);
     
 
     
