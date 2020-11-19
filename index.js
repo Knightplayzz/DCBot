@@ -1,8 +1,8 @@
 const discord = require("discord.js");
 const botConfig = require("./botConfig.json");
 const fs = require ("fs");
+const { join } = require("path");
 var prefix = botConfig.prefix;
-const roleClaim = require('./reactionsRoles.js')
 
 const bot = new discord.Client();
 bot.login(process.env.token);
@@ -17,8 +17,6 @@ console.log(`is online.`);
 bot.user.setActivity("Your problems", {
     type:"LISTENING"
 } );
-
-    roleClaim(bot)
 });
 
 fs.readdir("./Commands/" , (err, files) => {
@@ -117,4 +115,12 @@ bot.on("message", async message => {
     }
    
     if (commands) commands.run(bot, message, arguments, options);
+
+    bot.on("guildMemberAdd", member => {
+        var joinChannel = member.guild.channels.cache.get('778345716304052244');
+
+        if (!joinChannel) return;
+
+        joinChannel.send(`Welcome to the server ${member}`);
+    })
 });
