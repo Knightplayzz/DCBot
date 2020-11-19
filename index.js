@@ -118,11 +118,6 @@ bot.on("message", async message => {
 
     bot.on("guildMemberAdd", member => {
 
-        var welcomeRole = member.guild.roles.cache.get('779019379962413088');
-
-        if (!welcomeRole) return;
-
-        member.roles.add(welcomeRole);
         
    
         var joinChannel = member.guild.channels.cache.get('778345716304052244');
