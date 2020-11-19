@@ -117,17 +117,19 @@ bot.on("message", async message => {
     if (commands) commands.run(bot, message, arguments, options);
 
     bot.on("guildMemberAdd", member => {
+   
         var joinChannel = member.guild.channels.cache.get('778345716304052244');
-
         if (!joinChannel) return;
-
+    
+        //channel.send("welkem bij server.")
+    
         var welcomeEmbed = new discord.MessageEmbed()
-        .setTitle(`Welcome`)
+        .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
+        .setDescription(`**Welcome to the server ${member.user.username}!**`)
         .setColor("BLUE")
-        .setDescription(`Welcome to the server ${member}!`)
-        .setFooter(`© created by philippe#0354`)
+        .seFooter(`© created by philippe#0354`)
         .setTimestamp();
-
+    
         channel.send(welcomeEmbed);
     })
 });
