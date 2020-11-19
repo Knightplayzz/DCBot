@@ -134,8 +134,8 @@ bot.on("message", async message => {
         .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
         .setDescription(`**Welcome to the server ${member.user.username}!**`)
         .setColor("BLUE")
-        .seFooter(`© created by philippe#0354`)
-        .setTimestamp();
+        .setTimestamp()
+        .seFooter(`© created by philippe#0354`);
     
         channel.send(welcomeEmbed);
     })
