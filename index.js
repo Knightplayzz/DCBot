@@ -119,8 +119,4 @@ bot.on("message", async message => {
    
     if (commands) commands.run(bot, message, arguments, options);
 
-    bot.on('guildMemberAdd', member => {
-        member.guild.channels.get('778345716304052244').send("Welcome"); 
-    });
-
 });
