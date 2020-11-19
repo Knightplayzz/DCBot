@@ -121,6 +121,13 @@ bot.on("message", async message => {
 
         if (!joinChannel) return;
 
-        joinChannel.send(`Welcome to the server ${member}`);
+        var welcomeEmbed = new discord.MessageEmbed()
+        .setTitle(`Welcome`)
+        .setColor("BLUE")
+        .setDescription(`Welcome to the server ${member}!`)
+        .setFooter(`© created by philippe#0354`)
+        .setTimestamp();
+
+        channel.send(welcomeEmbed);
     })
 });
