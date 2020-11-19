@@ -16,7 +16,6 @@ var botEmbed = new discord.MessageEmbed()
         `**!serverinfo** | !serverinfo.`,
         `**!hello** | !hello.`,
         `**!ping** | !ping.`,
-        `**!amongus** | !amongus <code>.`,
         `**!update** | !update.`,
         `**!invite** | !invite **Night-bot**.`,
 
@@ -28,6 +27,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!tempmute** | !tempmute <@player> <seconds x 1000>`,
         `**!clear** | !clear <amount> (**NOT 99+**).`,
         `**!announce** |!announce <title> | <message> | <collor> | <channel>.`,
+        `**!amongus** | !amongus <code>.`,
         `**!addrole** | !addrole <@player> <role.id>.`,
         `**!removerole** | !removerole <@player> <role.id>.`,
 

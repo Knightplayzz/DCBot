@@ -16,7 +16,6 @@ var botEmbed = new discord.MessageEmbed()
         `**!serverinfo** | Information of the server.`,
         `**!hello** | Says hello back.`,
         `**!ping** | Shows the ping of the bot.`,
-        `**!amongus** | Shows the code of the match.`,
         `**!update** |  See all information about the updates.`,
         `**!invite** | Invite **Night-bot!**.`,
 
@@ -28,6 +27,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!tempmute** | Mutes a player for given minutes.`,
         `**!clear** | Deletes the given amount of messages at a time.`,
         `**!announce** | Makes a announcement.`,
+        `**!amongus** | Shows the code of the match.`,
         `**!addrole** | Adds a role to a player.`,
         `**!removerole** | Removes the role of a player.`,
 
