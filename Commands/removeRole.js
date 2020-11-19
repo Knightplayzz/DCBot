@@ -47,14 +47,14 @@ module.exports.run = async (bot, message, args) => {
         .setFooter(`© created by philippe#0354`)
         .setTimestamp()
         .setDescription(`By ${targetUser} a role has been removed. \n **role:** ${role}. \n **Warned by:** ${message.author}.`);
-  
-
-        targetUser.roles.remove(role);
 
         console.log('Made it this far')
 
+        targetUser.roles.add(role);
+
         logChannel.send(log);
         return message.channel.send(roleRemove);
+        
     
 
     
