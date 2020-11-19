@@ -39,7 +39,7 @@ module.exports.run = async (bot, message, args) => {
         var roleGiven = new discord.MessageEmbed()
         .setColor("GREEN")
         .setTitle(`**Role has been given!**`)
-        .setDescription(`To: ${targetUser}. \n **Role:** ${role}.`)
+        .setDescription(`**To:** ${targetUser}. \n **Role:** ${role}.`)
         .setFooter(`© created by philippe#0354`)
         .setTimestamp();
 
@@ -48,7 +48,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("RED")
         .setFooter(`© created by philippe#0354`)
         .setTimestamp()
-        .setDescription(`By ${targetUser} a role has been added. \n **role:** ${role}. \n **Gave by:** ${message.author}.`);
+        .setDescription(`**By:** ${targetUser} a role has been added. \n **role:** ${role}. \n **Gave by:** ${message.author}.`);
 
         targetUser.roles.add(role);
 
