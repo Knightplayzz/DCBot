@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     .setTitle("**Invite Night-bot**")
     .setColor("BLUE")
     .setFooter(`© created by philippe#0354`)
-    .setUrl(`${url}`)
+    .setURL(`${url}`)
     .setDescription(`**Invite Night-Bot!**`);
 
     message.channel.send(invite)

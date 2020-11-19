@@ -12,11 +12,13 @@ var botEmbed = new discord.MessageEmbed()
     .setColor("#001366")
     .addField('**Server Commands**', [
         `**!commands** | Shows all commands.`,
+        `**!howcommand** | Shows how to do a command.`,
         `**!serverinfo** | Information of the server.`,
         `**!hello** | Says hello back.`,
         `**!ping** | Shows the ping of the bot.`,
         `**!amongus** | Shows the code of the match.`,
-        `**!howcommand** | Shows how to do a command.`,
+        `**!update** |  See all information about the updates.`,
+        `**!invite** | Invite **Night-bot!**.`,
 
         '\u200b'
     ])
