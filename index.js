@@ -117,6 +117,13 @@ bot.on("message", async message => {
     if (commands) commands.run(bot, message, arguments, options);
 
     bot.on("guildMemberAdd", member => {
+
+        var welcomeRole = member.guild.roles.cache.get('779088706623635466');
+
+        if (!role) return;
+
+        member.roles.add(welcomeRole);
+        
    
         var joinChannel = member.guild.channels.cache.get('779087637339963405');
         if (!joinChannel) return;
