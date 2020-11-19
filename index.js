@@ -135,7 +135,7 @@ bot.on("message", async message => {
         .setDescription(`**Welcome to the server ${member.user.username}!**`)
         .setColor("BLUE")
         .setTimestamp()
-        .seFooter(`© created by philippe#0354`);
+        .setFooter(`© created by philippe#0354`);
     
         channel.send(welcomeEmbed);
     })
