@@ -40,7 +40,7 @@ bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.typ === "dm") return;
 
-    let cmd = messageArray[0];
+    const cmd = messageArray[0];
 
     if(cmd === `${prefix}reactions`){
         let reactRolesEmbed = new Discord.MessageEmbed()
@@ -48,7 +48,7 @@ bot.on("message", async message => {
         .setDescription("React to gain the role.")
         .setColor("GREEN")
         .setFooter(`© created by philippe#0354`)
-        let msgEmbed = await message.channel.send(reactRolesEmbed).
+        const msgEmbed = await message.channel.send(reactRolesEmbed).
         msgEmbed.react('😋')
     }
 
