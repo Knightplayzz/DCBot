@@ -118,7 +118,9 @@ bot.on("message", async message => {
 
     bot.on("guildMemberAdd", member => {
 
-        
+        //var joinRole = member.guild.roles.cache.get('role id hier');
+        //if (!joinRole) return;
+        //member.roles.add(joinRole);
    
         var joinChannel = member.guild.channels.cache.get('778345716304052244');
         if (!joinChannel) return;
