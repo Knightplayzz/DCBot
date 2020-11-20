@@ -122,7 +122,7 @@ bot.on("message", async message => {
         //if (!joinRole) return;
         //member.roles.add(joinRole);
    
-        var joinChannel = member.guild.channels.cache.get('778345716304052244');
+        var joinChannel = member.guild.channels.cache.get('767072977853349958');
         if (!joinChannel) return;
     
         //channel.send("welkem bij server.")
