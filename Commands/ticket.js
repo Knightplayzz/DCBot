@@ -40,7 +40,7 @@ message.guild.channels.create(userName, {type: 'text'}).then(
                     VIEW_CHANNEL: false
                 });
 
-                    settedParent.updateOverwrite(message.author.id, {
+                        settedParent.updateOverwrite(message.author.id, {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
                         SEND_MESSAGES: true,
