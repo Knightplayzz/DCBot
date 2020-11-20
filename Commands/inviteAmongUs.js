@@ -8,7 +8,7 @@ const discord = require("discord.js");
       .setFooter(`© created by philippe#0354`)
       .setDescription(`${message.author} you don't have permission for this command.`);
 
-    var loggingChannel = message.guild.channels.cache.find(channel => channel.name === "〔📌〕mededelingen")
+    var loggingChannel = message.guild.channels.cache.find(channel => channel.name === "〔🔪〕among-us")
     if (!loggingChannel) return message.channel.send("Kan het kanaal niet vinden");
 
     if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(error);
@@ -30,7 +30,7 @@ const discord = require("discord.js");
     .setTitle("Among us")
     .setColor("RED")
     .setFooter(`© created by philippe#0354`)
-    .setDescription(`De code is ${code} \n || @everyone ||`);
+    .setDescription(`De code is ${code}`);
 
 
     loggingChannel.send(inviteCode)
