@@ -78,7 +78,7 @@ var botEmbedUnmute = new discord.MessageEmbed()
 
         message.channel.send(botEmbedUnmute); 
         
-    }, s(muteTime));
+    }, ms(muteTime));
 
 }
 
