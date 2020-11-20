@@ -36,7 +36,7 @@ module.exports.run = async (client, message, args) => {
 
    if (mutePerson.hasPermission("MANAGE_MESSAGES")) return message.channel.send(botEmbedError);
 
-    var muteRole = message.guild.roles.cache.get('778341182987436042');
+    var muteRole = message.guild.roles.cache.get('768034503113310219');
     if(!muteRole) return message.channel.send(botEmbedError);
 
     var muteTime = args[1];
