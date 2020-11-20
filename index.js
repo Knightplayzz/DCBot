@@ -11,6 +11,27 @@ const activeSongs = new Map();
 
 bot.commands = new discord.Collection()
 
+bot.on("guildMemberAdd", member => {
+
+    //var joinRole = member.guild.roles.cache.get('role id hier');
+    //if (!joinRole) return;
+    //member.roles.add(joinRole);
+
+    var joinChannel = member.guild.channels.cache.get('767072977853349958');
+    if (!joinChannel) return;
+
+    //channel.send("welkem bij server.")
+
+    var welcomeEmbed = new discord.MessageEmbed()
+    .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
+    .setDescription(`**Welcome to the server ${member.user.username}!**`)
+    .setColor("BLUE")
+    .setTimestamp()
+    .setFooter(`© created by philippe#0354`);
+
+    joinChannel.send(welcomeEmbed);
+})
+
 
 bot.on("ready", async () => {
 console.log(`is online.`);
@@ -115,25 +136,4 @@ bot.on("message", async message => {
     }
    
     if (commands) commands.run(bot, message, arguments, options);
-
-    bot.on("guildMemberAdd", member => {
-
-        //var joinRole = member.guild.roles.cache.get('role id hier');
-        //if (!joinRole) return;
-        //member.roles.add(joinRole);
-   
-        var joinChannel = member.guild.channels.cache.get('767072977853349958');
-        if (!joinChannel) return;
-    
-        //channel.send("welkem bij server.")
-    
-        var welcomeEmbed = new discord.MessageEmbed()
-        .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
-        .setDescription(`**Welcome to the server ${member.user.username}!**`)
-        .setColor("BLUE")
-        .setTimestamp()
-        .setFooter(`© created by philippe#0354`);
-    
-        joinChannel.send(welcomeEmbed);
-    })
 });
