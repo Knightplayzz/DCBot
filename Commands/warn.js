@@ -7,9 +7,9 @@ module.exports.run = async (client, message, args) => {
 
     var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
 
-    var targetUser = args[1];
+    var targetUser = args[0];
 
-    var reason = args.slice(2).join(" ");
+    var reason = args.slice(1).join(" ");
  
     if(args[0] == null){
 
