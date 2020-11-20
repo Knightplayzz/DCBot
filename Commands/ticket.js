@@ -43,10 +43,10 @@ message.guild.channels.create(userName, {type: 'text'}).then(
                     settedParent.updateOverwrite(message.author.id, {
                         CREATE_INSTANT_INVITE: false,
                         READ_MESSAGES: true,
-                         SEND_MESSAGES: true,
-                         ATTACH_FILES: true,
-                         CONNECT: true,
-                         ADD_REACTIONS: true
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true,
+                        ADD_REACTIONS: true
 
                     });
 
