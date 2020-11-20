@@ -7,8 +7,6 @@ module.exports.run = async (client, message, args) => {
 
     var logChannel = message.guild.channels.cache.find(channel => channel.name === "log")
 
-    const args = message.content.slice(prefix.length).split(/ +/);
-
     var targetUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
 
     var reason = args.slice(2).join(" ");
