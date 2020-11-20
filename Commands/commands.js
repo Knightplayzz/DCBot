@@ -18,6 +18,8 @@ var botEmbed = new discord.MessageEmbed()
         `**!ping** | Shows the ping of the bot.`,
         `**!update** |  See all information about the updates.`,
         `**!invite** | Invite **Night-bot!**.`,
+        `**!ticket** | Creates a ticket.`,
+        `**!new** | Creates a ticket.`,
 
         '\u200b'
     ])
@@ -30,6 +32,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!amongus** | Shows the code of the match.`,
         `**!addrole** | Adds a role to a player.`,
         `**!removerole** | Removes the role of a player.`,
+        `**!close** | Closes a ticket.`,
 
         `\u200b`
 
