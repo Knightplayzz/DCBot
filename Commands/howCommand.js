@@ -37,12 +37,7 @@ var botEmbed = new discord.MessageEmbed()
         `\u200b`
 
     ])
-    .addField(`**Level commands**`, [
-        `**!levels** | !levels.`,
-        `**!rank** | !rank.`,
 
-        `\u200b`
-    ])
     .addField(`**Music Commands**`, [
         `**!p** | !p <youtube link>.`,
         `**!disconnect** | !disconnect.`,

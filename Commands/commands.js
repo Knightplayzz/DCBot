@@ -37,12 +37,7 @@ var botEmbed = new discord.MessageEmbed()
         `\u200b`
 
     ])
-    .addField(`**Level commands**`, [
-        `**!levels** | Show the GameNight's leaderboard.`,
-        `**!rank** | Shows your level.`,
-
-        `\u200b`
-    ])
+    
     .addField(`**Music Commands**`, [
         `**!p** | Plays a youtube link.`,
         `**!disconnect** | Disconnect the bot.`,
