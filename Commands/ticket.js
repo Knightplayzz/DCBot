@@ -46,7 +46,9 @@ message.guild.channels.create(userName, {type: 'text'}).then(
                         SEND_MESSAGES: true,
                         ATTACH_FILES: true,
                         CONNECT: true,
-                        ADD_REACTIONS: true
+                        ADD_REACTIONS: true,
+                        VIEW_CHANNEL: true,
+                        READ_MESSAGE_HISTORY: true
 
                     });
 
