@@ -23,8 +23,8 @@ module.exports.run = async (client, message, args) => {
     if(ticketBestaat) return;
 
     var waitEmbed = new discord.MessageEmbed()
-    .setTitle(`Hi ${message.author.username}`)
-    .setDescription("Ticket has been made!")
+    .setTitle(`Hello ${message.author.username}`)
+    .setDescription("Your ticket will be there soon.")
     .setFooter(`© created by philippe#0354`)
     .setTimestamp();
 
@@ -52,7 +52,7 @@ message.guild.channels.create(userName, {type: 'text'}).then(
 
                     var embedSay = new discord.MessageEmbed()
                     .setTitle(`Hi ${message.author.username}`)
-                    .setDescription("Put your question or message here.");
+                    .setDescription("What is your problem/question.");
 
                     settedParent.send(embedSay);
 

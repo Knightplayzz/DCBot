@@ -54,7 +54,7 @@ message.guild.channels.create(userName, {type: 'text'}).then(
 
                     var embedSay = new discord.MessageEmbed()
                     .setTitle(`Hi ${message.author.username}`)
-                    .setDescription("Put your question or message here.");
+                    .setDescription("What is your problem/question.");
 
                     settedParent.send(embedSay);
 
