@@ -40,19 +40,78 @@ bot.on("messageReactionAdd", async (reaction, user) => {
     }
 })
 
-//bot.on('messageReactionRemove', async (reaction, user) => {
-//    if (reaction.message.partial) await reaction.message.fetch();
-//    if (reaction.partial) await reaction.fetch();
-//    
-//    if (user.bot) return;
-//    if (!reaction.message.guild) return;
-//
-//    if (reaction.message.channel.id === "767033408928743428"){
-//              if (reaction.emoji.name === '🔥'){
-//          await reaction.message.guild.members.cache.get(user.id).roles.remove("767033925376802826")
-//        }
-//    }
-//})
+
+bot.on("message", async message => {
+
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+
+    if(cmd === `${prefix}reactgames`){
+        let reactembed = new discord.MessageEmbed()
+        .setTitle("Reaction Roles")
+        .setDescription("Chose your game(s)? -🔪 Among us \n -🚗 Rocket league \n -⛵ Sea of thieves \n -⛏️ Minecraft \n -:roblox: Roblox")
+        .setColor('GREEN')
+        let msgEmbed = await message.channel.send(reactembed)
+        msgEmbed.react("🔪")
+        msgEmbed.react("🚗")
+        msgEmbed.react("⛵")
+        msgEmbed.react("⛏️")
+        msgEmbed.react(":roblox:")
+    }
+})
+
+bot.on("messageReactionAdd", async (reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if(reaction.partial) await reaction.fetch();
+
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+
+    if (reaction.message.channel.id === "767037733998034944"){
+        if (reaction.emoji.name === '🔪'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("767005792188235796")
+        }
+        if (reaction.emoji.name === '🚗'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("767007194633076756")
+        }
+        if (reaction.emoji.name === '⛵'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("767007507456458772")
+        }
+        if (reaction.emoji.name === '⛏️')
+            await reaction.message.guild.members.cache.get(user.id).roles.add("767043328549715979")
+        }
+        if (reaction.emoji.name === ':roblox:'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("778695528921301014")
+        }
+    }
+)
+
+bot.on("messageReactionRemove", async (reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if(reaction.partial) await reaction.fetch();
+
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+
+    if (reaction.message.channel.id === "767037733998034944"){
+        if (reaction.emoji.name === '🔪'){
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("767005792188235796")
+        }
+        if (reaction.emoji.name === '🚗'){
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("767007194633076756")
+        }
+        if (reaction.emoji.name === '⛵'){
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("767007507456458772")
+        }
+        if (reaction.emoji.name === '⛏️')
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("767043328549715979")
+        }
+        if (reaction.emoji.name === ':roblox:'){
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("778695528921301014")
+        }
+    }
+)
+
 
 bot.on("guildMemberAdd", member => {
 
