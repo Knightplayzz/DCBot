@@ -80,7 +80,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
         if (reaction.emoji.name === '⛏️')
             await reaction.message.guild.members.cache.get(user.id).roles.add("767043328549715979")
         }
-        if (reaction.emoji.name === ':roblox:'){
+        if (reaction.emoji.name === '768057622350921739'){
             await reaction.message.guild.members.cache.get(user.id).roles.add("778695528921301014")
         }
     }
@@ -106,7 +106,7 @@ bot.on("messageReactionRemove", async (reaction, user) => {
         if (reaction.emoji.name === '⛏️')
             await reaction.message.guild.members.cache.get(user.id).roles.remove("767043328549715979")
         }
-        if (reaction.emoji.name === ':roblox:'){
+        if (reaction.emoji.name === '768057622350921739'){
             await reaction.message.guild.members.cache.get(user.id).roles.remove("778695528921301014")
         }
     }
