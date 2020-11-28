@@ -4,12 +4,55 @@ const fs = require ("fs");
 const { join } = require("path");
 var prefix = botConfig.prefix;
 
-const bot = new discord.Client();
+const bot = new discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 bot.login(process.env.token);
 
 const activeSongs = new Map();
 
 bot.commands = new discord.Collection()
+
+bot.on("message", async message => {
+
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+
+    if(cmd === `${prefix}reactions`){
+        let reactembed = new discord.MessageEmbed()
+        .setTitle("Human verify")
+        .setDescription("press ✅ to get verified")
+        .setColor('GREEN')
+        let msgEmbed = await message.channel.send(reactembed)
+        msgEmbed.react('✅')
+    }
+})
+
+bot.on("messageReactionAdd", async (reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if(reaction.partial) await reaction.fetch();
+
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+
+    if (reaction.message.channel.id === "767033408928743428"){
+        if (reaction.emoji.name === '✅'){
+            await reaction.message.guild.members.cache.get(user.id).roles.add("767033925376802826")
+        }
+    }
+})
+
+//bot.on('messageReactionRemove', async (reaction, user) => {
+//    if (reaction.message.partial) await reaction.message.fetch();
+//    if (reaction.partial) await reaction.fetch();
+//    
+//    if (user.bot) return;
+//    if (!reaction.message.guild) return;
+//
+//    if (reaction.message.channel.id === "767033408928743428"){
+//              if (reaction.emoji.name === '🔥'){
+//          await reaction.message.guild.members.cache.get(user.id).roles.remove("767033925376802826")
+//        }
+//    }
+//})
 
 bot.on("guildMemberAdd", member => {
 
