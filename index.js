@@ -49,14 +49,14 @@ bot.on("message", async message => {
     if(cmd === `${prefix}reactgames`){
         let reactembed = new discord.MessageEmbed()
         .setTitle("Reaction Roles")
-        .setDescription("Chose your game(s)? -🔪 Among us \n -🚗 Rocket league \n -⛵ Sea of thieves \n -⛏️ Minecraft \n -:roblox: Roblox")
+        .setDescription("Chose your game(s)? -🔪 Among us \n -🚗 Rocket league \n -⛵ Sea of thieves \n -⛏️ Minecraft \n -768057622350921739 Roblox")
         .setColor('GREEN')
         let msgEmbed = await message.channel.send(reactembed)
         msgEmbed.react("🔪")
         msgEmbed.react("🚗")
         msgEmbed.react("⛵")
         msgEmbed.react("⛏️")
-        msgEmbed.react(":roblox:")
+        msgEmbed.react("768057622350921739")
     }
 })
 
@@ -80,7 +80,7 @@ bot.on("messageReactionAdd", async (reaction, user) => {
         if (reaction.emoji.name === '⛏️')
             await reaction.message.guild.members.cache.get(user.id).roles.add("767043328549715979")
         }
-        if (reaction.emoji.name === ':roblox:'){
+        if (reaction.emoji.name === '768057622350921739'){
             await reaction.message.guild.members.cache.get(user.id).roles.add("778695528921301014")
         }
     }
@@ -106,7 +106,7 @@ bot.on("messageReactionRemove", async (reaction, user) => {
         if (reaction.emoji.name === '⛏️')
             await reaction.message.guild.members.cache.get(user.id).roles.remove("767043328549715979")
         }
-        if (reaction.emoji.name === ':roblox:'){
+        if (reaction.emoji.name === '768057622350921739'){
             await reaction.message.guild.members.cache.get(user.id).roles.remove("778695528921301014")
         }
     }
