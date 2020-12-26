@@ -18,8 +18,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!ping** | !ping.`,
         `**!update** | !update.`,
         `**!invite** | !invite **Night-bot**.`,
-        `**!ticket** | !ticket.`,
-        `**!new** | !new.`,
+        `**!tinfo** | !tinfo.`,
 
         '\u200b'
     ])
@@ -32,7 +31,6 @@ var botEmbed = new discord.MessageEmbed()
         `**!amongus** | !amongus <code>.`,
         `**!addrole** | !addrole <@player> <role.id>.`,
         `**!removerole** | !removerole <@player> <role.id>.`,
-        `**!close** | !close.`,
 
         `\u200b`
 

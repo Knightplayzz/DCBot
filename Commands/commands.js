@@ -19,6 +19,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!update** |  See all information about the updates.`,
         `**!invite** | Invite **Night-bot!**.`,
         `**!tinfo** | See all ticket commands.`,
+        `**!music** | See all music commands.`,
         '\u200b'
     ])
     .addField(`**Moderator Commands**`, [
@@ -36,12 +37,7 @@ var botEmbed = new discord.MessageEmbed()
 
     ])
     
-    .addField(`**Music Commands**`, [
-        `**!p** | Plays a youtube link.`,
-        `**!disconnect** | Disconnect the bot.`,
 
-        `\u200b`
-    ])
     .setFooter(`© created by philippe#0354`)
 
     message.author.send(botEmbed);
