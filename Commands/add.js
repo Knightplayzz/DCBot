@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
 
    if(message.channel.parentID != categoryID) return message.reply("Wrong channel");
 
-   var addUser = message.guild.member(message.mentions,users.first() || message.guild.members.cache.get(args[0]));
+   var addUser = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
 
    if(!addUser) return message.reply("No member given!");
 
