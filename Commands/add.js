@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
     .setDescription(`Do you want to add ${addUser}?`)
     .setFooter(`© created by philippe#0354`);
 
-    var ebed = new discord.MessageEmbed()
+    var embed = new discord.MessageEmbed()
         .setTitle("Member added")
         .setColor("GREEN")
         .setTimestamp()
