@@ -4,58 +4,57 @@ module.exports.run = async (client, message, args) => {
 
     // sps steen, papier, schaar
 
-    if (!args[0]) return message.reply("Gebruik sps <steen, paapier, schaar>");
+    if (!args[0]) return message.reply("use rps <rock, paper, scissors>");
 
-    var options = ["steen", "papier", "schaar"];
+    var options = ["rock", "paper", "scissors"];
 
     var result = options[Math.floor(Math.random() * options.length)];
 
-    if (args[0].toUpperCase() == "STEEN") {
+    if (args[0].toUpperCase() == "ROCK") {
 
-        if (result == "papier") {
+        if (result == "paper") {
 
-            return message.channel.send(`Ik heb ${result} :notepad_spiral:, Ik win`);
+            return message.channel.send(`Ik heb ${result} :notepad_spiral:, I win`);
 
-        } else if (result == "schaar") {
+        } else if (result == "scissors") {
 
-            return message.channel.send(`Ik heb ${result} :scissors:, Jij wint`);
+            return message.channel.send(`Ik heb ${result} :scissors:, you win`);
+        } else if (result == "rock") {
 
-        } else if (result == "steen") {
-
-            return message.channel.send(`Ik heb ${result} :moyai:, Het is gelijkspel`);
+            return message.channel.send(`Ik heb ${result} :moyai:, draw`);
 
         }
 
     }
-    else if (args[0].toUpperCase() == "PAPIER") {
+    else if (args[0].toUpperCase() == "PAPER") {
 
-        if (result == "schaar") {
+        if (result == "scissors") {
 
-            return message.channel.send(`Ik heb ${result} :scissors:, Ik win`);
+            return message.channel.send(`Ik heb ${result} :scissors:, I win`);
 
-        } else if (result == "steen") {
+        } else if (result == "rock") {
 
-            return message.channel.send(`Ik heb ${result} :moyai:, Jij wint`);
+            return message.channel.send(`Ik heb ${result} :moyai:, you win`);
 
-        } else if (result == "papier") {
+        } else if (result == "paper") {
 
-            return message.channel.send(`Ik heb ${result} :notepad_spiral:, Het is gelijkspel`);
+            return message.channel.send(`Ik heb ${result} :notepad_spiral:, draw`);
 
         }
 
-    } else if (args[0].toUpperCase() == "SCHAAR") {
+    } else if (args[0].toUpperCase() == "SCISSORS") {
 
-        if (result == "steen") {
+        if (result == "rock") {
 
-            return message.channel.send(`Ik heb ${result} :moyai:, Ik win`);
+            return message.channel.send(`Ik heb ${result} :moyai:, I win`);
 
-        } else if (result == "papier") {
+        } else if (result == "paper") {
 
-            return message.channel.send(`Ik heb ${result} :notepad_spiral:, Jij wint`);
+            return message.channel.send(`Ik heb ${result} :notepad_spiral:, you win`);
 
-        } else if (result == "schaar") {
+        } else if (result == "scissors") {
 
-            return message.channel.send(`Ik heb ${result} :scissors:, Het is gelijkspel`);
+            return message.channel.send(`Ik heb ${result} :scissors:, draw`);
 
         }
 
@@ -64,7 +63,7 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "sps",
+    name: "rps",
     description: "",
     category: ""
 }

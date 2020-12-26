@@ -20,6 +20,8 @@ var botEmbed = new discord.MessageEmbed()
         `**!invite** | Invite **Night-bot!**.`,
         `**!tinfo** | See all ticket commands.`,
         `**!music** | See all music commands.`,
+        `**!review** | Makes a review.`,
+        `**!rps** | Rock paper scissors.`,
         '\u200b'
     ])
     .addField(`**Moderator Commands**`, [
