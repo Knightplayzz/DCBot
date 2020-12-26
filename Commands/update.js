@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
     .setColor("GREEN")
     .setTimestamp()
     .setFooter(`© created by philippe#0354`)
-    .setDescription(`**What is new in this update?** \n !ticket, !new, !close, !announce fix, !role fix, !tempmute fix, role fixes, !update, !howcommand, !invite, welcome embed \n \n**When is the next update?** \n The next update is **23-11-2020**. \n \n **What is new in that update?** \n **Reaction roles**.`);
+    .setDescription(`**What is new in this update?** \n !new, !rps, !command, !howcommand, !review, !music, !tinfo, !add, !remove, !member, reactions-roles \n \n**When is the next update?** \n The next update is **1-01-2021**. \n \n **What is new in that update?** \n **!play, !pause, !resume, !leave, !queue, !search**.`);
 
     message.channel.send(helloEmbed)
 
