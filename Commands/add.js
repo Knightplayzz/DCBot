@@ -54,7 +54,7 @@ module.exports.run = async (client, message, args) => {
                     message.reply("Member added cancelled.").then(msg => msg.delete({ timeout: 5000 }));
                 }
         });
-}
+};
 
 module.exports.help = {
     name: "add"
