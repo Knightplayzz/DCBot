@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
 
    var categoryID = "779405637334466612";
 
-   if(!message.member.hasPermisson("KICK_MEMBERS")) return message.reply("No permissions");
+   if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply("No permissions");
 
    if(message.channel.parentID != categoryID) return message.reply("Wrong channel");
 
