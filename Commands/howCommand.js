@@ -19,6 +19,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!update** | !update.`,
         `**!invite** | !invite **Night-bot**.`,
         `**!tinfo** | !tinfo.`,
+        `**!music** | !music.`,
 
         '\u200b'
     ])
@@ -34,13 +35,6 @@ var botEmbed = new discord.MessageEmbed()
 
         `\u200b`
 
-    ])
-
-    .addField(`**Music Commands**`, [
-        `**!p** | !p <youtube link>.`,
-        `**!disconnect** | !disconnect.`,
-
-        `\u200b`
     ])
     .setFooter(`© created by philippe#0354`)
 
