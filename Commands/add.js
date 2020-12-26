@@ -53,8 +53,22 @@ module.exports.run = async (client, message, args) => {
 
                     message.reply("Member added cancelled.").then(msg => msg.delete({ timeout: 5000 }));
                 }
+
         });
-};
+        async function promptMessage(message, author, time, reactions) {
+
+            time *= 1000;
+        
+            for (const reaction of reactions) {
+                await message.react(reaction);
+            }
+        
+            const filter = (reaction, user) => reactions.includes(reaction.emoji.name) && user.id === author.id;
+        
+            return message.awaitReactions(filter, { max: 1, time: time }).then(collected => collected.first() && collected.first().emoji.name);
+        }
+}
+
 
 module.exports.help = {
     name: "add"
