@@ -14,14 +14,14 @@ module.exports.run = async (client, message, args) => {
 
         if (result == "paper") {
 
-            return message.channel.send(`Ik heb ${result} :notepad_spiral:, I win`);
+            return message.channel.send(`I have ${result} :notepad_spiral:, I win`);
 
         } else if (result == "scissors") {
 
-            return message.channel.send(`Ik heb ${result} :scissors:, you win`);
+            return message.channel.send(`I have ${result} :scissors:, you win`);
         } else if (result == "rock") {
 
-            return message.channel.send(`Ik heb ${result} :moyai:, draw`);
+            return message.channel.send(`I have ${result} :moyai:, draw`);
 
         }
 
@@ -30,15 +30,15 @@ module.exports.run = async (client, message, args) => {
 
         if (result == "scissors") {
 
-            return message.channel.send(`Ik heb ${result} :scissors:, I win`);
+            return message.channel.send(`I have ${result} :scissors:, I win`);
 
         } else if (result == "rock") {
 
-            return message.channel.send(`Ik heb ${result} :moyai:, you win`);
+            return message.channel.send(`I have ${result} :moyai:, you win`);
 
         } else if (result == "paper") {
 
-            return message.channel.send(`Ik heb ${result} :notepad_spiral:, draw`);
+            return message.channel.send(`I have ${result} :notepad_spiral:, draw`);
 
         }
 
@@ -46,15 +46,15 @@ module.exports.run = async (client, message, args) => {
 
         if (result == "rock") {
 
-            return message.channel.send(`Ik heb ${result} :moyai:, I win`);
+            return message.channel.send(`I have ${result} :moyai:, I win`);
 
         } else if (result == "paper") {
 
-            return message.channel.send(`Ik heb ${result} :notepad_spiral:, you win`);
+            return message.channel.send(`I have ${result} :notepad_spiral:, you win`);
 
         } else if (result == "scissors") {
 
-            return message.channel.send(`Ik heb ${result} :scissors:, draw`);
+            return message.channel.send(`I have ${result} :scissors:, draw`);
 
         }
 

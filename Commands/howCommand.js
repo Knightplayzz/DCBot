@@ -20,6 +20,8 @@ var botEmbed = new discord.MessageEmbed()
         `**!invite** | !invite **Night-bot**.`,
         `**!tinfo** | !tinfo.`,
         `**!music** | !music.`,
+        `**!rps** | !rps.`,
+        `**!review** | !review <number 1-5> <message>.`,
 
         '\u200b'
     ])
