@@ -22,6 +22,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!music** | See all music commands.`,
         `**!review** | Makes a review.`,
         `**!rps** | Rock paper scissors.`,
+        
         '\u200b'
     ])
     .addField(`**Moderator Commands**`, [
@@ -33,7 +34,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!amongus** | Shows the code of the match.`,
         `**!addrole** | Adds a role to a player.`,
         `**!removerole** | Removes the role of a player.`,
-       
+       `**!giveaway** | Gives something away.`
 
         `\u200b`
 

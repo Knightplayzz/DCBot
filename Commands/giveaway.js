@@ -49,11 +49,11 @@ module.exports.run = async (client, message, args) => {
         }
 
         if (peopleReacted.length == 0) {
-            return message.channel.send("Niemand heeft gewonnen dus de bot wint.");
+            return message.channel.send("No boddy has won.");
         }
 
         if (peopleReacted.length < winnerCount) {
-            return message.channel.send("Er zijn te weinig mensen die mee deden daarom heeft de bot gewonnen.");
+            return message.channel.send("Not enough players");
         }
 
         for (let y = 0; y < winnerCount; y++) {
@@ -80,7 +80,7 @@ module.exports.run = async (client, message, args) => {
 
         for (let y = 0; y < winners.length; y++) {
 
-            message.channel.send("Proficiat: " + winners[y].username + `Je hebt gewonnen ${item}`);
+            message.channel.send("Congratulations: " + winners[y].username + `you have won ${item}`);
 
         }
 
