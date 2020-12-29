@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args, ops) => {
 
         var respone = "";
 
-        for (var vid in videos) {
+        for (var vid in videos){
             respone += `**[${parseInt(vid) + 1}]:** ${videos[vid].title} \r\n`;
         }
 
