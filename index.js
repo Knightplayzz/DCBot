@@ -227,7 +227,7 @@ bot.on("message", async message => {
 
     var arguments = messageArray.slice(1);
 
-    var commands = bot.commands.get(command.slice(prefix.length)) || bot.commands.get(bot.aliases.get(command.slice(prifix.length)));
+    var commands = bot.commands.get(command.slice(prefix.length)) || bot.commands.get(bot.aliases.get(command.slice(prefix.length)));
 
     var options = {
         active: activeSongs
