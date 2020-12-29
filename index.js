@@ -10,6 +10,7 @@ bot.login(process.env.token);
 const activeSongs = new Map();
 
 bot.commands = new discord.Collection()
+bot.aliases = new discord.Collection()
 
 bot.on("message", async message => {
 
@@ -153,8 +154,13 @@ fs.readdir("./Commands/" , (err, files) => {
     jsFiles.forEach((f,i) => {
         var fileGet = require(`./Commands/${f}`);
         console.log(`De file ${f} is geladen`);
-        bot.commands.set(fileGet.help.name, fileGet)
-    })
+
+        bot.commands.set(fileGet.help.name, fileGet);
+
+        fileGet.help.aliases.forEach(alias => {
+            bot.aliases.set(alias, fileGet.help.name);
+        })
+    });
 });
 
 
@@ -183,19 +189,12 @@ bot.on("message", async message => {
                 senteceUser += " " + changeWord;
 
                 amountSwearWords++;
-
-
             }
-
-
-
         }
 
         if(!changeWord){
             senteceUser+= " " + messageArray[y];
-
         }
-
     }
 
     var warning = new discord.MessageEmbed()
@@ -220,10 +219,7 @@ bot.on("message", async message => {
         message.channel.send(senteceUser);
         logChannel.send(log)
         return message.channel.send(warning);
-
     }
-
-
 
     var command = messageArray[0];
 
@@ -231,7 +227,7 @@ bot.on("message", async message => {
 
     var arguments = messageArray.slice(1);
 
-    var commands = bot.commands.get(command.slice(prefix.length));
+    var commands = bot.commands.get(command.slice(prefix.length)) || bot.commands.get(bot.aliases.get(command.slice(prifix.length)));
 
     var options = {
         active: activeSongs

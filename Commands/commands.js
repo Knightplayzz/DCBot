@@ -65,6 +65,7 @@ var botEmbed = new discord.MessageEmbed()
 
   
   module.exports.help = {
-    name: "commands"
+    name: "commands",
+    aliases: []
 }
 

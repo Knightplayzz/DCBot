@@ -11,5 +11,6 @@ module.exports.run = async (client, message, args) => {
       message.channel.send(pingEmbed);
   };
 module.exports.help = {
-    name: "ping"
+    name: "ping",
+    aliases: []
 }

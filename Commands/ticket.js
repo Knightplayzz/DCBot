@@ -71,5 +71,6 @@ message.guild.channels.create(userName, {type: 'text'}).then(
 }
 
 module.exports.help = {
-    name: "ticket"
+    name: "ticket",
+    aliases: []
 }
