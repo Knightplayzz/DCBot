@@ -13,8 +13,6 @@ module.exports.run = async (client, message, args) => {
 
     var validate = await ytdl.validateURL(args[0]);
     if(!validate) return message.channel.send("Geef een juist url op");
-
-    var info = await ytdl.getInfo(args[0]);
     
     var options = {seek: 2, volume: 1, bitrate: 128000 };
 
