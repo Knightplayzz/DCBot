@@ -84,5 +84,5 @@ var botEmbedUnmute = new discord.MessageEmbed()
 
 module.exports.help = {
     name: "tempmute",
-    aliases: []
+    aliases: ["tmute"]
 }

@@ -38,5 +38,5 @@ const discord = require("discord.js");
 
 module.exports.help = {
     name: "amongus",
-    aliases: []
+    aliases: ["code"]
 }

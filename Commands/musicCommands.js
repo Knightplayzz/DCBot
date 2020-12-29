@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
     .setTitle("**Music commands**")
     .setColor("GREEN")
     .setFooter(`© created by philippe#0354`)
-    .setDescription(`!p(url) |Plays a song. \n !leave | The bot leave the music channel `);
+    .setDescription(`!p(url) |Plays a song. \n !leave | The bot leave the music channel \n !search | Search the name of the song`);
 
     message.channel.send(helloEmbed)
 
@@ -14,5 +14,5 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "music",
-    aliases: []
+    aliases: ["musiccommands", "musiccommand", "musicinfo"]
 }
