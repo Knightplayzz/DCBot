@@ -68,7 +68,7 @@ module.exports.run = async (client, message, args, options) => {
         
 }
 
-async function Play(client, ops, data){
+async function Play(client, ops, data) {
 
     client.channels.cache.get(data.queue[0].announceChannel).send(`Now playing: ${data.queue[0].songTitle}.`);
 
