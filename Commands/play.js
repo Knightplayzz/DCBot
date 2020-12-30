@@ -70,7 +70,7 @@ module.exports.run = async (client, message, args, options) => {
 
 async function Play(client, ops, data){
 
-    client.channel.cache.get(data.queue[0].announceChannel).send(`Now playing: ${data.queue[0].songTitle}.`);
+    client.channels.cache.get(data.queue[0].announceChannel).send(`Now playing: ${data.queue[0].songTitle}.`);
 
     var options = {seek: 2, volume: 1, bitrate: 128000 };
 
