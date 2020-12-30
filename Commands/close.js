@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 
         var embedCreateTicket = new discord.MessageEmbed()
         .setTitle(`Ticket ${message.channel.name}`)
-        .setDescription("The ticket is **Closed**")
+        .setDescription(`The ticket is closed by: ${message.author}.`)
         .setFooter(`© created by philippe#0354`)
         .setTimestamp();
 
