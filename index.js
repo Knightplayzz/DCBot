@@ -7,7 +7,16 @@ var prefix = botConfig.prefix;
 const bot = new discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 bot.login(process.env.token);
 
+//music
+
 const activeSongs = new Map();
+
+
+
+
+
+
+//other shit
 
 bot.commands = new discord.Collection()
 bot.aliases = new discord.Collection()
@@ -229,9 +238,13 @@ bot.on("message", async message => {
 
     var commands = bot.commands.get(command.slice(prefix.length)) || bot.commands.get(bot.aliases.get(command.slice(prefix.length)));
 
+//music
+
     var options = {
         active: activeSongs
-    }
+    };
+
+    //other
    
     if (commands) commands.run(bot, message, arguments, options);
 });

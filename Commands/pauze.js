@@ -17,8 +17,6 @@ module.exports.run = async (client, message, args, options) => {
 }
 
 module.exports.help = {
-    name: "pauze",
-    description: "Geeft al de verschillende commands",
-    category: "Informatie",
-    aliases: []
+    name: "pause",
+    aliases: ["pauze", "stop"]
 }
