@@ -36,15 +36,9 @@ module.exports.run = async (client, message, args, options) => {
     if(!data.dispatcher){
         Play(client, options, data);
     }else{
-        var song = new discord.MessageEmbed()
-        .setTitle("**Song playing**")
-        .setURL(`${url}`)
-        .setColor("GREEN")
-        .setFooter(`© created by philippe#0354`)
-        .setTimestamp()
-        .setDescription(`Playing the song: ${info.title}.`)
+
     
-      message.channel.send(song);
+      message.channel.send("Song added to queue");
     }
 
     options.active.set(message.guild.id, data);
