@@ -15,25 +15,34 @@ const activeSongs = new Map();
 
 // Invite tracker
 
-bot.on('ready', () => {
-    console.log(`${bot.user.tag} has logged in.`);
-    bot.guilds.cache.forEach(guild => {
+client.on('inviteCreate', async invite => guildInvites.set(invite.guild.id, await invite.guild.fetchInvites()));
+client.on('ready', () => {
+    console.log(`${client.user.tag} has logged in.`);
+    client.guilds.cache.forEach(guild => {
         guild.fetchInvites()
             .then(invites => guildInvites.set(guild.id, invites))
             .catch(err => console.log(err));
     });
 });
 
-bot.on('guildMemberAdd', async member => {
+client.on('guildMemberAdd', async member => {
     const cachedInvites = guildInvites.get(member.guild.id);
     const newInvites = await member.guild.fetchInvites();
     guildInvites.set(member.guild.id, newInvites);
-    const usedInvite = newInvites.find(inv => cachedInvites.get(inv.code).uses < inv.uses);
-    console.log(usedInvite.code + " was used.");
-
-
-
-
+    try {
+        const usedInvite = newInvites.find(inv => cachedInvites.get(inv.code).uses < inv.uses);
+        const embed = new MessageEmbed()
+            .setDescription(`${member.user.tag} is the ${member.guild.memberCount} to join.\nJoined using ${usedInvite.inviter.tag}\nNumber of uses: ${usedInvite.uses}`)
+            .setTimestamp()
+            .setTitle(`${usedInvite.url}`);
+        const welcomeChannel = member.guild.channels.cache.find(channel => channel.id === '640340055201939456');
+        if(welcomeChannel) {
+            welcomeChannel.send(embed).catch(err => console.log(err));
+        }
+    }
+    catch(err) {
+        console.log(err);
+    }
 });
 
 
