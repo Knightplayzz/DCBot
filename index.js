@@ -15,17 +15,17 @@ const activeSongs = new Map();
 
 // Invite tracker
 
-client.on('inviteCreate', async invite => guildInvites.set(invite.guild.id, await invite.guild.fetchInvites()));
-client.on('ready', () => {
-    console.log(`${client.user.tag} has logged in.`);
-    client.guilds.cache.forEach(guild => {
+bot.on('inviteCreate', async invite => guildInvites.set(invite.guild.id, await invite.guild.fetchInvites()));
+bot.on('ready', () => {
+    console.log(`${bot.user.tag} has logged in.`);
+    bot.guilds.cache.forEach(guild => {
         guild.fetchInvites()
             .then(invites => guildInvites.set(guild.id, invites))
             .catch(err => console.log(err));
     });
 });
 
-client.on('guildMemberAdd', async member => {
+bot.on('guildMemberAdd', async member => {
     const cachedInvites = guildInvites.get(member.guild.id);
     const newInvites = await member.guild.fetchInvites();
     guildInvites.set(member.guild.id, newInvites);
