@@ -7,12 +7,34 @@ var prefix = botConfig.prefix;
 const bot = new discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 bot.login(process.env.token);
 
+const guildInvites = new Map();
+
 //music
 
 const activeSongs = new Map();
 
+// Invite tracker
+
+bot.on('ready', () => {
+    console.log(`${bot.user.tag} has logged in.`);
+    bot.guilds.cache.forEach(guild => {
+        guild.fetchInvites()
+            .then(invites => guildInvites.set(guild.id, invites))
+            .catch(err => console.log(err));
+    });
+});
+
+bot.on('guildMemberAdd', async member => {
+    const cachedInvites = guildInvites.get(member.guild.id);
+    const newInvites = await member.guild.fetchInvites();
+    guildInvites.set(member.guild.id, newInvites);
+    const usedInvite = newInvites.find(inv => cachedInvites.get(inv.code).uses < inv.uses);
+    console.log(usedInvite.code + " was used.");
 
 
+
+
+});
 
 
 
@@ -20,6 +42,9 @@ const activeSongs = new Map();
 
 bot.commands = new discord.Collection()
 bot.aliases = new discord.Collection()
+
+
+// Reaction roles
 
 bot.on("message", async message => {
 
@@ -123,6 +148,9 @@ bot.on("messageReactionRemove", async (reaction, user) => {
 )
 
 
+// Join role and Welcome embed
+
+
 bot.on("guildMemberAdd", member => {
 
     //var joinRole = member.guild.roles.cache.get('role id hier');
@@ -144,6 +172,7 @@ bot.on("guildMemberAdd", member => {
     joinChannel.send(welcomeEmbed);
 })
 
+// Bot on
 
 bot.on("ready", async () => {
 console.log(`is online.`);
@@ -151,6 +180,9 @@ bot.user.setActivity("Your problems", {
     type:"LISTENING"
 } );
 });
+
+
+// Command handeler
 
 fs.readdir("./Commands/" , (err, files) => {
     if (err) console.log(err);
@@ -172,6 +204,8 @@ fs.readdir("./Commands/" , (err, files) => {
     });
 });
 
+
+// Anti swear
 
 bot.on("message", async message => {
     if(message.author.bot) return;
@@ -205,6 +239,8 @@ bot.on("message", async message => {
             senteceUser+= " " + messageArray[y];
         }
     }
+
+    // Warning embed
 
     var warning = new discord.MessageEmbed()
     .setTitle("**YOU HAVE A WARNING**")
