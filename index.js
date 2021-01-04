@@ -15,35 +15,36 @@ const activeSongs = new Map();
 
 // Invite tracker
 
-bot.on('inviteCreate', async invite => guildInvites.set(invite.guild.id, await invite.guild.fetchInvites()));
-bot.on('ready', () => {
-    console.log(`${bot.user.tag} has logged in.`);
-    bot.guilds.cache.forEach(guild => {
-        guild.fetchInvites()
-            .then(invites => guildInvites.set(guild.id, invites))
-            .catch(err => console.log(err));
-    });
-});
+// bot.on('inviteCreate', async invite => guildInvites.set(invite.guild.id, await invite.guild.fetchInvites()));
+// bot.on('ready', () => {
+//     console.log(`${bot.user.tag} has logged in.`);
+//     bot.guilds.cache.forEach(guild => {
+//         guild.fetchInvites()
+//             .then(invites => guildInvites.set(guild.id, invites))
+//             .catch(err => console.log(err));
+            
+//     });
+// });
 
-bot.on('guildMemberAdd', async member => {
-    const cachedInvites = guildInvites.get(member.guild.id);
-    const newInvites = await member.guild.fetchInvites();
-    guildInvites.set(member.guild.id, newInvites);
-    try {
-        const usedInvite = newInvites.find(inv => cachedInvites.get(inv.code).uses < inv.uses);
-        const inviteEmbed = new discord.MessageEmbed()
-            .setDescription(`${member.user.tag} is the ${member.guild.memberCount} to join.\nJoined using ${usedInvite.inviter.tag}\nNumber of uses: ${usedInvite.uses}`)
-            .setTimestamp()
-            .setTitle(`${usedInvite.url}`);
-        const welcomeChannel = member.guild.channels.cache.find(channel => channel.id === '640340055201939456');
-        if(welcomeChannel) {
-            welcomeChannel.send(inviteEmbed).catch(err => console.log(err));
-        }
-    }
-    catch(err) {
-        console.log(err);
-    }
-});
+// bot.on('guildMemberAdd', async member => {
+//     const cachedInvites = guildInvites.get(member.guild.id);
+//     const newInvites = await member.guild.fetchInvites();
+//     guildInvites.set(member.guild.id, newInvites);
+//     try {
+//         const usedInvite = newInvites.find(inv => cachedInvites.get(inv.code).uses < inv.uses);
+//         const inviteEmbed = new discord.MessageEmbed()
+//             .setDescription(`${member.user.tag} is the ${member.guild.memberCount} to join.\nJoined using ${usedInvite.inviter.tag}\nNumber of uses: ${usedInvite.uses}`)
+//             .setTimestamp()
+//             .setTitle(`${usedInvite.url}`);
+//         const welcomeChannel = member.guild.channels.cache.find(channel => channel.id === '640340055201939456');
+//         if(welcomeChannel) {
+//             welcomeChannel.send(inviteEmbed).catch(err => console.log(err));
+//         }
+//     }
+//     catch(err) {
+//         console.log(err);
+//     }
+// });
 
 
 
