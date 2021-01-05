@@ -22,6 +22,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!music** | See all music commands.`,
         `**!review** | Makes a review.`,
         `**!rps** | Rock paper scissors.`,
+        `**!members** | Show all members.`,
         
         '\u200b'
     ])
@@ -34,7 +35,8 @@ var botEmbed = new discord.MessageEmbed()
         `**!amongus** | Shows the code of the match.`,
         `**!addrole** | Adds a role to a player.`,
         `**!removerole** | Removes the role of a player.`,
-       `**!giveaway** | Gives something away.`,
+        `**!giveaway** | Gives something away.`,
+        `**!warn** | Warns a player.`,
 
         `\u200b`
 

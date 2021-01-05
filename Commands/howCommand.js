@@ -35,6 +35,7 @@ var botEmbed = new discord.MessageEmbed()
         `**!addrole** | !addrole <@player> <role.id>.`,
         `**!removerole** | !removerole <@player> <role.id>.`,
         `**!giveaway** | !giveaway <amount winners> <seconds> <message>`,
+        `**!warn** | !warn <@player> <reason>.`,
 
         `\u200b`
 
